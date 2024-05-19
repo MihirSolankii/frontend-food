@@ -16,13 +16,13 @@ const StoreContextProvider = (props) => {
       setcartitem((prev)=>({...prev,[itemid]:prev[itemid]+1}))
     }
     if(token){
-      await axios.post("https://backend-food-4.onrender.com//api/cart/add",{itemid},{headers:{token}});
+      await axios.post("https://backend-food-4.onrender.com/api/cart/add",{itemid},{headers:{token}});
     }
   }
   const removecart= async (itemid)=>{
     setcartitem((prev)=>({...prev,[itemid]:prev[itemid]-1}))
     if(token){
-      await axios.post("https://backend-food-4.onrender.com//api/cart/remove",{itemid},{headers:{token}});
+      await axios.post("https://backend-food-4.onrender.com/api/cart/remove",{itemid},{headers:{token}});
     }
   }
  
