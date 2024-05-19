@@ -20,7 +20,7 @@ function Loginpopup({ setshowlogin }) {
 
     const onLogin = async (event) => {
       event.preventDefault();
-      let apiUrl = "https://backend-food-4.onrender.com";
+      let apiUrl = "https://backend-food-4.onrender.com/";
       if (state === "Login") {
         apiUrl += "api/user/login";
       } else {
