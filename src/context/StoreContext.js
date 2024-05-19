@@ -38,12 +38,12 @@ const StoreContextProvider = (props) => {
   return totalamount;
  }
  const fetchFoodlist=async()=>{
-  const response=await axios.get("https://backend-food-4.onrender.com//api/food/list");
+  const response=await axios.get("https://backend-food-4.onrender.com/api/food/list");
   setFoodlist(response.data.data);
 
  }
  const loadcartdata=async(token)=>{
-  const response=await axios.post("https://backend-food-4.onrender.com//api/cart/get",{},{headers:{token}});
+  const response=await axios.post("https://backend-food-4.onrender.com/api/cart/get",{},{headers:{token}});
   setcartitem(response.data.cartData);
  }
  useEffect(()=>{
