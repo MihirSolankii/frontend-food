@@ -28,14 +28,16 @@ function Loginpopup({ setshowlogin }) {
       }
     
       try {
-        const response = await fetch(apiUrl, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(data),
+        const axios = require('axios');
+
+        axios.post(apiUrl, data)
+        .then(response => {
+          console.log(response);
+        })
+        .catch(error => {
+          console.error(error);
         });
-    
+        
         if (!response.ok) {
           throw new Error('Network response was not ok.');
         }
