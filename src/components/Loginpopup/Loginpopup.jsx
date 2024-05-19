@@ -30,7 +30,11 @@ function Loginpopup({ setshowlogin }) {
       try {
         const axios = require('axios');
 
-        axios.post(apiUrl, data)
+        axios.post(apiUrl, data, {
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        })
         .then(response => {
           console.log(response);
         })
@@ -38,9 +42,7 @@ function Loginpopup({ setshowlogin }) {
           console.error(error);
         });
         
-        if (!response.ok) {
-          throw new Error('Network response was not ok.');
-        }
+    
     
         const responseData = await response.json();
         if (responseData.token) {
